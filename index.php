@@ -63,7 +63,6 @@
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     function restart() {
-      //setTimeout(restart(), 2000);  //tentative delay 2s
       ctx.fillStyle = "#fff";
       ctx.font = "28px 'Press Start 2P'";
       ctx.fillText ("RESTART", 200, 600);
@@ -97,8 +96,7 @@
 
       if (bX + bird.width >= pipe[i].x && bX <= pipe[i].x + topPipe.width && (bY <= pipe[i].y + topPipe.height || bY + bird.height >= pipe[i].y + constant) || (bY + bird.height == canvas.height)) {
         endGame();
-        restart();
-
+        setTimeout(restart, 1550);
       } // END HIT
 
       // SCORE
@@ -120,6 +118,7 @@
     ctx.fillStyle = "#fff";
     ctx.font = "25px 'Press Start 2P'";
     ctx.fillText ("Score : "+score, 200, 50);
+
 
   } // END OF DRAW FONCTION
 
@@ -148,6 +147,8 @@
       location.reload();
     }
   }
+
+
   </script>
 </body>
 </html>
